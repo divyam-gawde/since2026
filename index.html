@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Since 2026 — a minimalist digital time capsule for messages to your future self.">
+  <title>Since 2026</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #0b0d0f;
+      color: #f2f2f2;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .hero {
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8d9399;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(64px, 16vw, 150px);
+      line-height: 0.95;
+      letter-spacing: -6px;
+      font-weight: 700;
+    }
+
+    .tagline {
+      margin: 30px auto 0;
+      max-width: 580px;
+      font-size: clamp(20px, 4vw, 30px);
+      color: #c7cbd0;
+      font-weight: 400;
+    }
+
+    .timer {
+      margin: 50px auto 0;
+      padding: 22px;
+      border-top: 1px solid #24282c;
+      border-bottom: 1px solid #24282c;
+      max-width: 700px;
+    }
+
+    .timer-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #737a81;
+      margin-bottom: 8px;
+    }
+
+    #live-time {
+      font-size: clamp(18px, 4vw, 27px);
+      font-variant-numeric: tabular-nums;
+      color: #e4e6e8;
+    }
+
+    .scroll {
+      display: inline-block;
+      margin-top: 70px;
+      color: #737a81;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      padding: 80px 0 120px;
+    }
+
+    section {
+      padding: 70px 0;
+      border-top: 1px solid #24282c;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: clamp(28px, 6vw, 44px);
+      letter-spacing: -1.5px;
+    }
+
+    p {
+      color: #aeb4ba;
+      font-size: 18px;
+      max-width: 680px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 15px;
+      padding: 22px 0;
+      border-bottom: 1px solid #1d2125;
+    }
+
+    .number {
+      color: #737a81;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .step span {
+      color: #8f969d;
+    }
+
+    .rules {
+      margin-top: 30px;
+      padding: 25px;
+      border: 1px solid #292e33;
+      border-radius: 8px;
+    }
+
+    .rules p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .status {
+      margin-top: 35px;
+      padding: 25px;
+      border: 1px solid #292e33;
+      border-radius: 8px;
+    }
+
+    .status-title {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #737a81;
+    }
+
+    #capacity {
+      margin-top: 8px;
+      font-size: 26px;
+    }
+
+    footer {
+      border-top: 1px solid #24282c;
+      padding: 35px 0 50px;
+      color: #626970;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 900px);
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      header {
+        min-height: 92vh;
+      }
+
+      main {
+        padding-top: 40px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container hero">
+      <div class="eyebrow">A project started in 2026</div>
+
+      <h1>Since 2026</h1>
+
+      <div class="tagline">
+        A message to your future self.
+      </div>
+
+      <div class="timer">
+        <div class="timer-label">This website has been alive for</div>
+        <div id="live-time">Calculating...</div>
+      </div>
+
+      <a class="scroll" href="#how">↓ How it works</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="how">
+      <h2>How it works</h2>
+
+      <p>
+        Write something today that you want to receive years from now.
+        We store it securely and deliver it to you on the date you choose.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="number">01</div>
+          <div>
+            <strong>Write</strong>
+            <span>Send your message as a plain-text email.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">02</div>
+          <div>
+            <strong>Preserve</strong>
+            <span>Your capsule is stored securely for the future.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">03</div>
+          <div>
+            <strong>Wait</strong>
+            <span>Go live your life. The system remembers.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">04</div>
+          <div>
+            <strong>Receive</strong>
+            <span>Your message arrives when its time comes.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Built to last.</h2>
+
+      <p>
+        No accounts. No passwords. No complicated interface.
+        Just a message, a date, and enough infrastructure to keep it safe.
+      </p>
+
+      <div class="rules">
+        <p>• One active capsule per email address.</p>
+        <p>• Maximum message size: 10,000 characters.</p>
+        <p>• Plain text only. No attachments.</p>
+        <p>• Accepted capsules receive a confirmation email.</p>
+        <p>• Rejected submissions do not generate emails.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Capacity</h2>
+
+      <p>
+        To keep the service small and sustainable, the number of accepted
+        capsules is limited each hour.
+      </p>
+
+      <div class="status">
+        <div class="status-title">Available this hour</div>
+        <div id="capacity">Loading...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Since 2026 · A small message for the future.
+  </footer>
+
+  <script>
+    /*
+      Website launch time:
+      12 September 2026 at 00:00:00 UTC
+    */
+
+    const launchDate = new Date("2026-09-12T00:00:00Z");
+
+    function updateTimer() {
+      const now = new Date();
+      let difference = now - launchDate;
+
+      if (difference < 0) {
+        difference = 0;
+      }
+
+      const seconds = Math.floor(difference / 1000);
+
+      const years = Math.floor(seconds / (365.2425 * 24 * 60 * 60));
+      const remainingAfterYears =
+        seconds - Math.floor(years * 365.2425 * 24 * 60 * 60);
+
+      const days = Math.floor(
+        remainingAfterYears / (24 * 60 * 60)
+      );
+
+      const remainingAfterDays =
+        remainingAfterYears - days * 24 * 60 * 60;
+
+      const hours = Math.floor(remainingAfterDays / (60 * 60));
+
+      const remainingAfterHours =
+        remainingAfterDays - hours * 60 * 60;
+
+      const minutes = Math.floor(remainingAfterHours / 60);
+      const secs = remainingAfterHours - minutes * 60;
+
+      document.getElementById("live-time").textContent =
+        `${years} years · ${days} days · ${hours} hours · ${minutes} minutes · ${secs} seconds`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    /*
+      The real capacity number will be connected to AWS later.
+      For now this deliberately remains a placeholder.
+    */
+
+    document.getElementById("capacity").textContent =
+      "Connecting soon";
+  </script>
+
+</body>
+</html>
