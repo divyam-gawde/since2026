@@ -296,3 +296,23 @@
     font-size: 14px;
   }
 }
+
+
+.hero-message {
+  margin: 40px auto 0;
+  max-width: 650px;
+  text-align: center;
+  color: #9fa5aa;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.1px;
+}
+
+.hero-message p {
+  margin: 0 0 18px;
+}
+
+.hero-message p:last-child {
+  margin-bottom: 0;
+  color: #b8bdc2;
+}
