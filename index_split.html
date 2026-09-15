@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Since 2026 — a minimalist digital time capsule for messages to your future self.">
+  <title>Since 2026</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="container hero">
+      <div class="eyebrow">A project started in 2026</div>
+
+      <h1>Since 2026</h1>
+
+      <div class="tagline">
+        A message to your future self.
+      </div>
+
+      <div class="timer">
+        <div class="timer-label">This website has been alive for</div>
+        <div id="live-time">Calculating...</div>
+      </div>
+
+      <a class="scroll" href="#how">↓ How it works</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="how">
+      <h2>How it works</h2>
+
+      <p>
+        Write something today that you want to receive years from now.
+        We store it securely and deliver it to you on the date you choose.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="number">01</div>
+          <div>
+            <strong>Write</strong>
+            <span>Send your message as a plain-text email.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">02</div>
+          <div>
+            <strong>Preserve</strong>
+            <span>Your capsule is stored securely for the future.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">03</div>
+          <div>
+            <strong>Wait</strong>
+            <span>Go live your life. The system remembers.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="number">04</div>
+          <div>
+            <strong>Receive</strong>
+            <span>Your message arrives when its time comes.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Built to last.</h2>
+
+      <p>
+        No accounts. No passwords. No complicated interface.
+        Just a message, a date, and enough infrastructure to keep it safe.
+      </p>
+
+      <div class="rules">
+        <p>• One active capsule per email address.</p>
+        <p>• Maximum message size: 10,000 characters.</p>
+        <p>• Plain text only. No attachments.</p>
+        <p>• Accepted capsules receive a confirmation email.</p>
+        <p>• Rejected submissions do not generate emails.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Capacity</h2>
+
+      <p>
+        To keep the service small and sustainable, the number of accepted
+        capsules is limited each hour.
+      </p>
+
+      <div class="status">
+        <div class="status-title">Available this hour</div>
+        <div id="capacity">Loading...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Since 2026 · A small message for the future.
+  </footer>
+
+  <script>
+    /*
+      Website launch time:
+      12 September 2026 at 00:00:00 UTC
+    */
+
+    const launchDate = new Date("2026-09-12T00:00:00+05:30");
+
+    function updateTimer() {
+      const now = new Date();
+      let difference = now - launchDate;
+
+      if (difference < 0) {
+        difference = 0;
+      }
+
+      const seconds = Math.floor(difference / 1000);
+
+      const years = Math.floor(seconds / (365.2425 * 24 * 60 * 60));
+      const remainingAfterYears =
+        seconds - Math.floor(years * 365.2425 * 24 * 60 * 60);
+
+      const days = Math.floor(
+        remainingAfterYears / (24 * 60 * 60)
+      );
+
+      const remainingAfterDays =
+        remainingAfterYears - days * 24 * 60 * 60;
+
+      const hours = Math.floor(remainingAfterDays / (60 * 60));
+
+      const remainingAfterHours =
+        remainingAfterDays - hours * 60 * 60;
+
+      const minutes = Math.floor(remainingAfterHours / 60);
+      const secs = remainingAfterHours - minutes * 60;
+
+      document.getElementById("live-time").textContent =
+        `${years} years · ${days} days · ${hours} hours · ${minutes} minutes · ${secs} seconds`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    /*
+      The real capacity number will be connected to AWS later.
+      For now this deliberately remains a placeholder.
+    */
+
+    document.getElementById("capacity").textContent =
+      "Connecting soon";
+  </script>
+
+</body>
+</html>
