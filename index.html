@@ -87,13 +87,106 @@
       </p>
 
       <div class="rules">
-        <p>• One active capsule per email address.</p>
-        <p>• Maximum message size: 10,000 characters.</p>
-        <p>• Plain text only. No attachments.</p>
-        <p>• Accepted capsules receive a confirmation email.</p>
-        <p>• Rejected submissions do not generate emails.</p>
-        <p>• Use ISO 8601 format for the delivery date and time in the subject. Example: YYYY-MM-DDTHH:MM+05:30</p>
-      </div>
+  <details>
+    <summary>• One active capsule per email address.</summary>
+    <p>Each sender email address can have only one active capsule at a time.</p>
+  </details>
+
+  <details>
+    <summary>• One additional recipient.</summary>
+    <p>You may send a capsule to yourself and one additional recipient. The same recipient may receive multiple capsules from different senders.</p>
+  </details>
+
+  <details>
+    <summary>• Maximum message size: 10,000 characters.</summary>
+    <p>The capsule message must contain 10,000 characters or fewer.</p>
+  </details>
+
+  <details>
+    <summary>• Plain text only. No attachments.</summary>
+    <p>The capsule message must be plain text. Attachments are not accepted.</p>
+  </details>
+
+  <details>
+    <summary>• Use ISO 8601 format for the delivery date and time.</summary>
+    <p>The subject must follow this exact format: <code>YYYY-MM-DDTHH:MM+05:30</code> or <code>YYYY-MM-DDTHH:MM+05:30|recipient@email.com</code>. Any other format is invalid.</p>
+  </details>
+
+  <details>
+    <summary>• Delivery must be more than one calendar year away.</summary>
+    <p>Capsules scheduled for one calendar year or less from the time they are stored are invalid.</p>
+  </details>
+
+  <details>
+    <summary>• The capsule clock starts when it is stored.</summary>
+    <p>The delivery period is calculated from the exact date and time the capsule is successfully stored on the server.</p>
+  </details>
+
+  <details>
+    <summary>• Capsules over 100 years are not accepted.</summary>
+    <p>A delivery date more than 100 calendar years from the storage time is invalid. For custom arrangements and pricing, contact <a href="mailto:contact@since2026.in">contact@since2026.in</a>.</p>
+  </details>
+
+  <details>
+    <summary>• Extra recovery information for long-term capsules.</summary>
+    <p>For capsules scheduled more than a 10-calendar-year period ahead (3,652 or 3,653 days, depending on the dates), you may add a phone number and postal address at the bottom of the message using: <code>{phone:+91XXXXXXXXXX} {address:Full postal address}</code></p>
+  </details>
+
+  <details>
+    <summary>• Email delivery comes first.</summary>
+    <p>Phone or postal delivery is used only when the corresponding recipient email is unreachable when the capsule becomes due.</p>
+  </details>
+
+  <details>
+    <summary>• Partial delivery failure is handled individually.</summary>
+    <p>If one recipient's email is unreachable but another recipient's email is reachable, fallback delivery is attempted only for the unreachable recipient.</p>
+  </details>
+
+  <details>
+    <summary>• Fallback delivery is available only for long-term capsules.</summary>
+    <p>Text-message or Indian postal delivery may be attempted only for capsules scheduled beyond the 10-calendar-year period and only when the relevant email cannot be reached.</p>
+  </details>
+
+  <details>
+    <summary>• If all delivery methods fail, the capsule is kept safe.</summary>
+    <p>Failed capsules remain stored for an additional 10 years after their scheduled delivery date.</p>
+  </details>
+
+  <details>
+    <summary>• Your Capsule ID is your recovery key.</summary>
+    <p>If all delivery methods fail, contact <a href="mailto:contact@since2026.in">contact@since2026.in</a> with the Capsule ID from your confirmation email and a valid email address. The Capsule ID should be kept private.</p>
+  </details>
+
+  <details>
+    <summary>• A confirmation email seals the capsule.</summary>
+    <p>Once you receive the acceptance confirmation containing your Capsule ID, the capsule cannot be edited, cancelled, or replaced.</p>
+  </details>
+
+  <details>
+    <summary>• No confirmation means no sealed capsule.</summary>
+    <p>If your submission follows all requirements but you do not receive a confirmation email, contact <a href="mailto:contact@since2026.in">contact@since2026.in</a>.</p>
+  </details>
+
+  <details>
+    <summary>• Custom capsules are possible.</summary>
+    <p>For messages over 10,000 characters or other special requirements, contact <a href="mailto:contact@since2026.in">contact@since2026.in</a>.</p>
+  </details>
+
+  <details>
+    <summary>• Rejected submissions do not generate emails.</summary>
+    <p>Invalid submissions are rejected without a confirmation email.</p>
+  </details>
+
+  <details>
+    <summary>• Submit capsules to:</summary>
+    <p><a href="mailto:capsule@since2026.in">capsule@since2026.in</a></p>
+  </details>
+
+  <details>
+    <summary>• Contact:</summary>
+    <p><a href="mailto:contact@since2026.in">contact@since2026.in</a></p>
+  </details>
+</div>
     </section>
 
     <section>
